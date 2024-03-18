@@ -243,4 +243,11 @@ userRouter.get('/me', authMiddleware, async(req, res) => {
     })
 })
 
+userRouter.post('/signout', (req, res) => {
+    // Clear token from local storage
+    res.clearCookie('token');
+    res.status(200).json({ message: 'Signed out successfully' });
+});
+
+
 module.exports = userRouter;

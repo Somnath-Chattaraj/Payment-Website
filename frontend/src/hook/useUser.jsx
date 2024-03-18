@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 
 export const useUser = () => {
     const [loading, setLoading] = useState(true);
-    const [userDetails, setUserDetails] = useState();
-    var user = {};
+    const [userDetails, setUserDetails] = useState(null);
 
     async function getDetails() {
         try {
@@ -13,33 +12,26 @@ export const useUser = () => {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 }
             });
-            console.log(res.data.user.firstName);
-
-            user = {
-                balance: res.data.account.balance,
-                firstName: res.data.user.firstName
-            }
-
-            console.log(`user ${user}`);
-
             setUserDetails(res.data);
-            // console.log(`useUser ${userDetails}`);
-            
+            setLoading(false); // Move setLoading inside try block to ensure it's always set
         }
         catch (err) {
             console.log(err);
+            setLoading(false); // Set loading to false in case of error
         }
-        setLoading(false);
     }
 
     useEffect(() => {
         getDetails();
-        // console.log(userDetails);
-    }, []);
+    }, []); // Empty dependency array, so it runs only once on component mount
 
-    // Return loading and userDetails as an object
-    return {
-        loading,
-        userDetails
-    };
+    useEffect(() => {
+        if (userDetails) {
+            
+            // console.log("User details:", userDetails);
+        }
+    }, [userDetails]); // Log userDetails whenever it changes
+
+    return { loading, userDetails };
 };
+
