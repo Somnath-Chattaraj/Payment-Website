@@ -246,7 +246,7 @@ export default function Dashboard() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get("http://localhost:3000/api/v1/user/bulk?filter=" + filter);
+                const response = await axios.get("https://payment-website.onrender.com/api/v1/user/bulk?filter=" + filter);
                 setData(response.data.user);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -271,7 +271,7 @@ export default function Dashboard() {
 
     const handleSignOut = async () => {
         try {
-            await axios.post('http://localhost:3000/api/v1/user/signout');
+            await axios.post('https://payment-website.onrender.com/api/v1/user/signout');
             localStorage.removeItem('token');
             window.location.href = '/signin';
         } catch (error) {
