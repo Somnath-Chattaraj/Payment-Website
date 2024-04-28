@@ -48,7 +48,7 @@ export default function SigninPage() {
               />
             </div>
             <div className='flex flex-col'>
-              <h4 className='pl-4 pb-2'>Password</h4>
+              <h4 className='pl-4 pb-2'>Password(minimum of 6 characters)</h4>
               <input
                 type='password'
                 name='password'
@@ -61,7 +61,7 @@ export default function SigninPage() {
                 Sign In
               </button>
               <p className='text-black flex justify-center pb-4'>
-                Already have an account?{' '}
+                Don't have an account?{' '}
                 <Link className='underline text-bn pl-1' to={'/signup'}>
                   Sign Up
                 </Link>
