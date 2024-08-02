@@ -8,7 +8,7 @@ export default function SendMoney(props) {
 
     async function transferMoney() {
         try {
-            await axios.post("https://payment-website.onrender.com/api/v1/account/transfer", {
+            await axios.post("https://api.payment-website.somnathcodes.site/api/v1/account/transfer", {
                 to: props.name._id,
                 amount
             }, {

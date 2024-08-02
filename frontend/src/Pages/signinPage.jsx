@@ -10,7 +10,7 @@ export default function SigninPage() {
   const loginUser = async (e) => {
     e.preventDefault(); // Prevent default form submission
     try {
-      const response = await axios.post('https://payment-website.onrender.com/api/v1/user/signin', {
+      const response = await axios.post('https://api.payment-website.somnathcodes.site/api/v1/user/signin', {
         username,
         password,
       });
