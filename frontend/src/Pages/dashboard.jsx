@@ -19,7 +19,7 @@
 //     // }
 //     async function getUserDetails() {
 //         try {
-//             const response = await axios.get("https://api.payment-website.somnathcodes.site/api/v1/user/me", {
+//             const response = await axios.get("https://api-payment-website.somnathcodes.site/api/v1/user/me", {
 //                 headers: {
 //                     Authorization: `Bearer ${localStorage.getItem("token")}`,
 //                 }
@@ -34,7 +34,7 @@
 //     useEffect(() => {
 //         async function fetchData() {
 //             try {
-//                 const response = await axios.get("https://api.payment-website.somnathcodes.site/api/v1/user/bulk?filter=" + filter);
+//                 const response = await axios.get("https://api-payment-website.somnathcodes.site/api/v1/user/bulk?filter=" + filter);
 //                 setData(response.data.user);
 //             } catch (error) {
 //                 console.error('Error fetching data:', error);
@@ -105,7 +105,7 @@
 //     useEffect(() => {
 //         async function fetchData() {
 //             try {
-//                 const response = await axios.get("https://api.payment-website.somnathcodes.site/api/v1/user/bulk?filter=" + filter);
+//                 const response = await axios.get("https://api-payment-website.somnathcodes.site/api/v1/user/bulk?filter=" + filter);
 //                 setData(response.data.user);
 //             } catch (error) {
 //                 console.error('Error fetching data:', error);
@@ -168,7 +168,7 @@
 //     useEffect(() => {
 //         async function fetchData() {
 //             try {
-//                 const response = await axios.get("https://api.payment-website.somnathcodes.site/api/v1/user/bulk?filter=" + filter);
+//                 const response = await axios.get("https://api-payment-website.somnathcodes.site/api/v1/user/bulk?filter=" + filter);
 //                 setData(response.data.user);
 //             } catch (error) {
 //                 console.error('Error fetching data:', error);
@@ -246,7 +246,7 @@ export default function Dashboard() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get("https://api.payment-website.somnathcodes.site/api/v1/user/bulk?filter=" + filter);
+                const response = await axios.get("https://api-payment-website.somnathcodes.site/api/v1/user/bulk?filter=" + filter);
                 setData(response.data.user);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -271,7 +271,7 @@ export default function Dashboard() {
 
     const handleSignOut = async () => {
         try {
-            await axios.post('https://api.payment-website.somnathcodes.site/api/v1/user/signout');
+            await axios.post('https://api-payment-website.somnathcodes.site/api/v1/user/signout');
             localStorage.removeItem('token');
             window.location.href = '/signin';
         } catch (error) {
