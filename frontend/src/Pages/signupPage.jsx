@@ -28,7 +28,7 @@ export default function SignupPage () {
         ev.preventDefault();
 
         try {
-            const response = await axios.post("https://payment-website.onrender.com/api/v1/user/signup", {
+            const response = await axios.post("https://api.payment-website.somnathcodes.site/api/v1/user/signup", {
                 firstName,
                 lastName,
                 username,

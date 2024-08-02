@@ -7,7 +7,7 @@ export const useUser = () => {
 
     async function getDetails() {
         try {
-            const res = await axios.get("http://localhost:3000/api/v1/user/me", {
+            const res = await axios.get("https://api.payment-website.somnathcodes.site/api/v1/user/me", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 }
